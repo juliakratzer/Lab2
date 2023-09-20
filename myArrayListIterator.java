@@ -17,5 +17,5 @@ public interface myArrayListIterator {
 	
 	public void remove();
 	
-	public void set(Fraction frac)
+	public void set(Fraction frac);
 }
