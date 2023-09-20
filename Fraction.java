@@ -1,4 +1,3 @@
-
 import java.util.*;
 
 public class Fraction implements INumber<Fraction>, Comparable<Fraction>{
