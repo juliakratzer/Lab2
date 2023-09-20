@@ -1,4 +1,3 @@
-
 public interface INumber<T> {
 	T plus(T input);
 
