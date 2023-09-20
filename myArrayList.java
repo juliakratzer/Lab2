@@ -10,6 +10,7 @@ public class myArrayList {
 
 	/**
 	 * constructor with no params
+	 * 
 	 * @author Mason Beale
 	 */
 	public myArrayList() {
@@ -19,6 +20,7 @@ public class myArrayList {
 
 	/**
 	 * constructor with specified length
+	 * 
 	 * @author Mason Beale
 	 * @param arrLength the user wanted array length
 	 */
@@ -28,6 +30,7 @@ public class myArrayList {
 
 	/**
 	 * the number of items in the array
+	 * 
 	 * @author Mason Beale
 	 * @return the length of the array (not including nulls)
 	 */
@@ -37,6 +40,7 @@ public class myArrayList {
 
 	/**
 	 * a helper method to grow the array by the growth policy
+	 * 
 	 * @author Mason Beale
 	 */
 	private void grow() {
@@ -45,7 +49,9 @@ public class myArrayList {
 	}
 
 	/**
-	 * adds a new item to the end of the array, calling grow if it would be out of bounds
+	 * adds a new item to the end of the array, calling grow if it would be out of
+	 * bounds
+	 * 
 	 * @author Mason Beale
 	 * @param input the item to add to the array
 	 * @return true when the item is successfully added
@@ -65,6 +71,7 @@ public class myArrayList {
 
 	/**
 	 * removes the first instance of a given item
+	 * 
 	 * @author Mason Beale
 	 * @param input the item to be removed
 	 * @return the item that was removed
@@ -85,22 +92,26 @@ public class myArrayList {
 
 // 	}
 
-  	/**
+	/**
 	 * removes the first instance of a given item
-	 * @author Julia Kratzer 
+	 * 
+	 * @author Julia Kratzer
 	 * @param input the item to be removed
 	 * @return the item that was removed
 	 */
-  	public Fraction remove (Fraction input); {
-	  for (int i = 0; i < myArray.length; i++) {
-        	if (elements[i].hasSameValue(input)) {
-            		Fraction removed = elements[I];
-        	}
-        	return removed;
-	  }
- 	}
+	public Fraction remove(Fraction input){
+		for (int i = 0; i < myArray.length; i++) {
+			if (myArray[i].hasSameValue(input)) {
+				Fraction removed = myArray[i];
+				return removed;
+			}
+		}
+		return input;
+	}
+
 	/**
 	 * checks to see if a certain item is in the array
+	 * 
 	 * @author Mason Beale
 	 * @param input the item to check for
 	 * @return true if the item is contained in the array
