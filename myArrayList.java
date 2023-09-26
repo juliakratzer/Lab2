@@ -150,4 +150,44 @@ public class myArrayList {
 		System.out.println(arrList.contains(new Fraction(0, 1)));
 
 	}
+	/**
+	 * Returns the next element in the iteration and advances the iterator by one position. 
+	 * @author JuliaKratzer
+	 *
+	 * @return the next element in the iteration
+	 * @throws NoSuchElementException if there are no more elements to iterate
+	 */
+	public Fraction next() {
+        if (hasNext()) {
+            return myArray[currentIndex++];
+        }
+        throw new NoSuchElementException("No next element.");
+    }
+	/**
+	 * Returns the index of the element that would be returned by the next call to next().
+	 * @author JuliaKratzer
+	 *
+	 * @return the index of the next element in the iteration
+	 */
+	
+	public int nextIndex() {
+        if (hasNext()) {
+            return currentIndex;
+        }
+        return currentIndex;
+    }
+
+	/**
+	 * Returns the previous element in the iteration and moves the iterator backward by one position.
+	 * @author JuliaKratzer
+	 *
+	 * @return the previous element in the iteration
+	 * @throws NoSuchElementException if there are no more elements to iterate backward
+	 */
+	public Fraction previous() {
+        if (hasPrevious()) {
+            return myArray[--currentIndex];
+        }
+        throw new NoSuchElementException("No previous element.");
+    }
 }
