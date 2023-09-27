@@ -1,21 +1,65 @@
+import java.util.*;
 
-public interface myArrayListIterator {
+public class myArrayListIterator implements Iterator<Fraction>{
+	private int previousIndex;
+	private int nextIndex = 0;
+	private myArrayList arr;
 	
-	public void add(Fraction frac);
+	public myArrayListIterator(myArrayList arrList) {
+		arr = arrList;
+	}
 	
-	public boolean hasNext();
 	
-	public boolean hasPrevious();
+	public void add(Fraction frac) {
+		Fraction stored = frac;
+
+		if(arr.myArray[arr.myArray.length-1] != null) {
+			arr.grow();
+		}
+		for(int i = nextIndex; i<arr.myArray.length;i++) {
+//			System.out.println(i);
+//			System.out.println(arr.myArray.length);
+			Fraction keep = arr.myArray[i];
+			arr.myArray[i] = stored;
+			stored = keep;
+			
+		}
+		
+	}
 	
-	public Fraction next();
+	public boolean hasNext() {
+		if(nextIndex<arr.length()) {
+			return true;
+		}
+		return false;
+	}
 	
-	public int nextIndex();
+	public boolean hasPrevious() {
+		if(previousIndex>=0) {
+			return true;
+		}
+		return false;
+	}
 	
-	public Fraction previous();
+	public Fraction next() {
+		return null;
+	}
 	
-	public int previousIndex();
+	public int nextIndex() {
+		return 0;
+	}
 	
-	public void remove();
+	public Fraction previous() {
+		return null;
+	}
 	
-	public void set(Fraction frac);
+	public int previousIndex() {
+		return 0;
+	}
+	
+	public void remove() {
+	}
+	
+	public void set(Fraction frac) {
+	}
 }
