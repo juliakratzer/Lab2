@@ -1,12 +1,12 @@
 import java.util.*;
 
-public class myArrayList {
+public class myArrayList{
 	// finals for creating generic myArrayList
 	private final int initial = 50;
 	private final double growthPolicy = .2;
 	private int currentIndex = 0;
 	// array to store values of type T
-	private Fraction[] myArray;
+	public Fraction[] myArray;
 
 	/**
 	 * constructor with no params
@@ -28,6 +28,10 @@ public class myArrayList {
 		myArray = (Fraction[]) new Object[arrLength];
 	}
 
+	public myArrayListIterator iterator() {
+		return new myArrayListIterator(this);
+		
+	}
 	/**
 	 * the number of items in the array
 	 * 
@@ -43,7 +47,7 @@ public class myArrayList {
 	 * 
 	 * @author Mason Beale
 	 */
-	private void grow() {
+	public void grow() {
 		int newLength = (int) (myArray.length + (myArray.length * growthPolicy));
 		myArray = Arrays.copyOf(myArray, newLength);
 	}
@@ -112,19 +116,16 @@ public class myArrayList {
 
 	public static void main(String[] args) {
 		myArrayList arrList = new myArrayList();
-		for (int i = 0; i < 51; i++) {
+		for (int i = 0; i < 49; i++) {
 			Fraction frac = new Fraction(i, i + 1);
 			arrList.add(frac);
 		}
-		System.out.println("the original myArrayList:");
-		System.out.println(arrList.toString());
-
-		System.out.println("removing the fraction 0/1 and adding 285/285:");
-		arrList.remove(new Fraction(0, 1));
-		arrList.add(new Fraction(285, 285));
-		System.out.println(arrList.toString());
-		System.out.println("checking to see if the myArrayList contains 0/1:");
-		System.out.println(arrList.contains(new Fraction(0, 1)));
+		myArrayListIterator itr = arrList.iterator();
+		System.out.println(arrList);
+		itr.add(new Fraction(1,1));
+		System.out.println(arrList);
+		itr.add(new Fraction(2,1));
+		System.out.println(arrList);
 
 	}
 }
